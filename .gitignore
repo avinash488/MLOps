@@ -43,3 +43,6 @@ desktop.ini
 # Jupyter (in case you use it later)
 .ipynb_checkpoints/
 *.ipynb
+
+
+mlflow.db
