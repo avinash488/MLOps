@@ -15,7 +15,9 @@ tokenizer = None
 async def lifespan(app: FastAPI):
     global model, tokenizer
     if not MODEL_PATH.exists():
-        raise RuntimeError(f"Model not found at {MODEL_PATH}. Run train.py first.")
+        print(f"WARNING: Model not found at {MODEL_PATH}. Running in limited mode.")
+        yield
+        return
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
     model     = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
     model.eval()
@@ -45,6 +47,8 @@ def health():
 
 @app.post("/predict", response_model=PredictResponse)
 def predict(request: PredictRequest):
+    if model is None:
+        raise HTTPException(status_code=503, detail="Model not found")
     if not request.text.strip():
         raise HTTPException(status_code=422, detail="Text cannot be empty.")
 
