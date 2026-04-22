@@ -1,9 +1,13 @@
 .venv1/
 .venv/
+venv/
 __pycache__/
 *.pyc
 .git/
-mlflow/
+mlruns/
+mlartifacts/
 src/data/
+src/__pycache__/
 *.log
 .env
+.idea/

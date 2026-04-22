@@ -2,8 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY api/requirements-api.txt .
+RUN pip install --no-cache-dir -r requirements-api.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY src/models/ ./src/models/
 COPY api/ ./api/
