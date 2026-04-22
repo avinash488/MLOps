@@ -1,0 +1,45 @@
+# Virtual environment
+.venv1/
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Dataset (too large for GitHub)
+src/data/
+
+# Trained model weights (too large for GitHub)
+src/models/
+
+# MLflow artifacts
+mlruns/
+mlartifacts/
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env
+*.env
+
+# Docker
+*.tar
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter (in case you use it later)
+.ipynb_checkpoints/
+*.ipynb
