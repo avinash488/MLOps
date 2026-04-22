@@ -1,0 +1,6 @@
+[core]
+    remote = origin
+['remote "gdrive"']
+    url = gdrive://1zqxf52AhUOx8oTzXi-P1ulommJA1TsDk
+['remote "origin"']
+    url = https://dagshub.com/avinash488/MLOps.dvc
