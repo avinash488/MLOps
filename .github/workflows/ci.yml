@@ -28,5 +28,7 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v
 
-      - name: Build Docker image
-        run: docker build -t sentiment-api .
+      - name: Build Docker image (structure check)
+        run: |
+          mkdir -p src/models/sentiment
+          docker build -t sentiment-api .

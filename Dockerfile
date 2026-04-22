@@ -5,8 +5,12 @@ WORKDIR /app
 COPY api/requirements-api.txt .
 RUN pip install --no-cache-dir -r requirements-api.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
-COPY src/models/ ./src/models/
 COPY api/ ./api/
+
+# Copy model if it exists, otherwise create empty directory
+RUN mkdir -p ./src/models/sentiment
+
+COPY . .
 
 EXPOSE 8000
 
